@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정렬(구글)</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
+
     <style>
         .header img {
             border-radius: 25px;
@@ -72,7 +76,7 @@
             justify-content: center;
         }
 
-        .site-box>div:hover {
+        .site-box>a:hover {
             background-color: gainsboro;
         }
 
@@ -82,7 +86,7 @@
             border-radius: 20px;
         }
 
-        .site-box > div {
+        .site-box>a {
             /* 수식이 계산된 px단위가 적용됨 */
             width: calc(100% / 5 - 2px);
             height: 100px;
@@ -93,20 +97,44 @@
             justify-content: center;
             align-items: center;
 
-            cursor: pointer;
+            text-decoration: none;
+            color: black;
         }
 
         .site-box p {
             margin: 5px;
+            /* 글자 크기 조정 */
+            font-size: 20px;
+            /* 폰트 설정 */
+            /* 영문 폰트는 한글 글씨체가 없을 수 있다. */
+            /* 폰트명에 공백이 포함되어 있으면 작은 따옴표나 큰 따옴표로 둘러싸준다. */
+            /* 폰트명을 여러개 적어놓으면 왼쪽부터 차례대로 */
+            /* 폰트가 적용되는데, 예를 들어 첫번째 폰트가 */
+            /* 적용이 잘 되었다면 이후 폰트는 무시 */
+            /* 구글 폰트 검색 ㄱㄱ */
+            font-family:'Diphylleia', serif;
         }
 
-        .final {
-            border: 1px solid;
-            text-align: end;
+        .fixed-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+
+            border: 0;
+            box-shadow: 0px 0px 5px 1px gainsboro;
+            border-radius: 20px;
+
+            color: blue;
+            cursor: pointer;
         }
 
-        .final-text {
-            margin-right: 10px;
+        .fixed-btn:hover {
+            background-color: gainsboro;
         }
     </style>
 
@@ -130,65 +158,58 @@
         </div>
         <div class="bottom">
             <div class="site-box">
-                <div>
+                <a href="https://www.naver.com">
                     <img src="https://clova-phinf.pstatic.net/MjAxODAzMjlfOTIg/MDAxNTIyMjg3MzM3OTAy.WkiZikYhauL1hnpLWmCUBJvKjr6xnkmzP99rZPFXVwgg.mNH66A47eL0Mf8G34mPlwBFKP0nZBf2ZJn5D4Rvs8Vwg.PNG/image.png"
                         alt="">
                     <p>네이버</p>
-                </div>
-                <div>
-
+                </a>
+                <a href="https://www.kakao.com">
                     <img src="https://i0.wp.com/forhappywomen.com/wp-content/uploads/2018/11/%EC%82%B0%EB%B6%80%EC%9D%B8%EA%B3%BC-%ED%8F%AC%ED%95%B4%ED%94%BC%EC%9A%B0%EB%A8%BC-%EB%AC%B8%EC%9D%98-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%8C%EB%9F%AC%EC%8A%A4%EC%B9%9C%EA%B5%AC-%EB%B2%84%ED%8A%BC.png?resize=586%2C586&ssl=1"
                         alt="">
                     <p>카카오</p>
 
-                </div>
-                <div>
-                    <img src="https://blog.kakaocdn.net/dn/bWMx1B/btroABI203N/FRMPOigHkkNlmNb3ZQ12j0/img.png"
-                        alt="">
+                </a>
+                <a href="https://www.daum.net">
+                    <img src="https://blog.kakaocdn.net/dn/bWMx1B/btroABI203N/FRMPOigHkkNlmNb3ZQ12j0/img.png" alt="">
                     <p>다음</p>
-                </div>
-                <div>
+                </a>
+                <a>
                     <img src="https://yt3.googleusercontent.com/ytc/AOPolaSp2VARu76Zk_q49nL1swjW1JCoZRGKnXgP-GYjAQ=s900-c-k-c0x00ffffff-no-rj"
                         alt="">
                     <p>포스코</p>
-                </div>
-                <div>
-                    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969198.png"
-                        alt="">
+                </a>
+                <a>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969198.png" alt="">
                     <p>삼성</p>
-                </div>
-                <div>
-                    <img src="https://img.biz.sbs.co.kr/upload/2023/03/19/Mdc1679188868633-850.jpg"
-                        alt="">
+                </a>
+                <a>
+                    <img src="https://img.biz.sbs.co.kr/upload/2023/03/19/Mdc1679188868633-850.jpg" alt="">
                     <p>에코프로</p>
-                </div>
-                <div>
+                </a>
+                <a>
                     <img src="https://imgmmw.mbn.co.kr/storage/news/2020/12/04/129d7e1f5a3c49a387cc94793a504951.jpg"
                         alt="">
                     <p>알체라</p>
-                </div>
-                <div>
+                </a>
+                <a>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/LG_symbol.svg/2048px-LG_symbol.svg.png"
                         alt="">
                     <p>LG</p>
-                </div>
-                <div>
+                </a>
+                <a>
                     <img src="https://flexible.img.hani.co.kr/flexible/normal/585/325/imgdb/original/2021/0106/351609929577234.jpg"
                         alt="">
                     <p>기아</p>
-                </div>
-                <div>
+                </a>
+                <a>
                     <img src="data:image/png;base64,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"
                         alt="">
                     <p>SK</p>
-                </div>
+                </a>
             </div>
         </div>
-        <div class="final">
-            <div class="final-text">
-                <p>Chrome 맞춤설정</p>
-            </div>
-        </div>
+    </div>
+    <div class="fixed-btn">Chrome 맞춤설정</div>
     </div>
 </body>
 
