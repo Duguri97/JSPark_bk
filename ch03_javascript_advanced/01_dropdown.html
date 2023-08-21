@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DropDown</title>
+    <style>
+        .container {
+            height: 400px;
+            width: 800px;
+            margin: auto;
+            border: 1px solid black;
+        }
+
+        .nav-bar {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: beige;
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: black;
+            margin: 10px;
+        }
+
+        .nav-bar > div {
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .drop-content {
+            position: absolute;
+            top: 100%;
+            background-color: white;
+
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 2px 4px 0px;
+            width: 100px;
+
+            visibility: hidden;
+        }
+
+        .dropdown:hover .drop-content {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <div>
+                <img height="40px" src="https://blog.kakaocdn.net/dn/CNxUY/btqw7dnElRU/HuVZgvpT6J8n4aEYFathEk/img.jpg"
+                    alt="">
+            </div>
+            <div>
+                <a href="">회사소개</a>
+                <a href="">오시는길</a>
+                <div class="dropdown">
+                    <a class="dropbtn" href="">박상현님▼</a>
+                    <div class="drop-content">
+                        <a href="">프로필 수정</a>
+                        <a href="">로그아웃</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
