@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인프로젝트</title>
+    <style>
+        @font-face {
+            font-family: '싸이월드폰트';
+            src: url(../resources/css/NanumPenScript-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: '문구폰트';
+            src: url(../resources/css/NanumBrushScript-Regular.ttf);
+        }
+
+        .sparkling-text {
+            background-image: linear-gradient(45deg, #f06, #ff0, #0ff, #f06);
+            background-size: 200% 200%;
+            animation: sparkling 2s linear infinite;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        @keyframes sparkling {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 200% 200%;
+            }
+        }
+
+
+        body {
+            background-color: orange;
+        }
+
+        div {
+            border: 1px solid red;
+        }
+
+        .container {
+            width: 900px;
+            height: 500px;
+            border: 1px solid black;
+            margin: auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px gainsboro;
+            margin-top: 150px;
+        }
+
+        .box {
+            width: 850px;
+            height: 470px;
+            margin: 50px;
+            margin: auto;
+            margin-top: 8px;
+            background-color: gainsboro;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px gainsboro;
+        }
+
+        .box-border {
+            width: 97%;
+            height: 98%;
+            border: 3px dashed gray;
+            margin: auto;
+            margin-top: 2px;
+            border-radius: 15px;
+        }
+
+        .nav-bar {
+            padding: 10px;
+            font-size: 15px;
+            font-family: '싸이월드폰트';
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-bar>a {
+            text-decoration: none;
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .main>div:nth-child(1) {
+            background-color: white;
+            width: 170px;
+            height: 410px;
+            border-radius: 15px;
+        }
+
+        .main>div:nth-child(2) {
+            background-color: white;
+            position: relative;
+            left: 60px;
+            width: 1500px;
+            height: 410px;
+            border-radius: 15px;
+        }
+
+        .main>div:nth-child(3) {
+            background-color: transparent;
+            width: 80px;
+            height: 410px;
+        }
+
+        .ring1 {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: 170px;
+            top: 50px;
+        }
+
+        .ring2 {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: 170px;
+            top: 300px;
+        }
+
+        .today {
+            color: black;
+            position: relative;
+            left: 10px;
+            top: 10px;
+        }
+
+        .today-num {
+            position: relative;
+            right: 160px;
+            top: 10px;
+        }
+
+        .total-num {
+            position: relative;
+            right: 140px;
+            top: 10px;
+        }
+
+        .name {
+            color: orangered;
+            position: relative;
+            right: 90px;
+            top: 10px;
+        }
+
+        .http {
+            color: purple;
+            position: relative;
+            top: 10px;
+        }
+
+        .profile img {
+            width: 140px;
+            height: 160px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+        }
+
+        .state {
+            position: relative;
+            width: 125px;
+            top: 5px;
+            left: 25px;
+            color: red;
+            border-color: gainsboro;
+            background-color: transparent;
+            font-family: '싸이월드폰트';
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .friend {
+            position: relative;
+            width: 125px;
+            color: black;
+            border-color: gainsboro;
+            background-color: transparent;
+            font-family: "싸이월드폰트";
+            text-align: center;
+            top: 160px;
+            left: 25px;
+            cursor: pointer;
+        }
+
+        .story {
+            width: 150px;
+            height: 135px;
+            font-family: "문구폰트";
+            font-size: 13px;
+            /* background-color: orange; */
+            margin: 10px;
+            color: black;
+            position: relative;
+            bottom: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-stage {
+            border: 1px solid skyblue;
+            width: 550px;
+            height: 390px;
+            margin: auto;
+            position: absolute;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px skyblue;
+            overflow-y: scroll;
+        }
+
+        .main-stage2 {
+            border: 1px solid skyblue;
+            width: 550px;
+            height: 390px;
+            margin: auto;
+            position: absolute;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px skyblue;
+            left: 5px;
+            overflow-y: scroll;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-stage2>div {
+            width: 99%;
+        }
+
+        .main-stage2>div:nth-child(1) {
+            background-color: gray;
+            color: white;
+            font-weight: bold;
+        }
+
+        .main-stage2>div:nth-child(2) {
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            margin-top: 5px;
+            font-weight: bold;
+            width: 100px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        .main-stage2>div:nth-child(3) {
+            margin-top: 5px;
+        }
+
+        .main-stage2>div:nth-child(4) {
+            width: 200px;
+            font-family: "문구폰트";
+            font-size: 20px;
+            border: 5px dotted;
+            border-top-color: gray;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-stage2>div:nth-child(5) {
+            background-color: gray;
+            margin-top: 5px;
+        }
+
+        .main-stage2>div:nth-child(6) {
+            margin-top: 5px;
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            margin-top: 5px;
+            font-weight: bold;
+            width: 100px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-stage2>div:nth-child(7) {
+            margin-top: 5px;
+        }
+
+        .main-stage2>div:nth-child(8) {
+            margin-top: 5px;
+            width: 230px;
+            font-family: "문구폰트";
+            font-size: 20px;
+            border: 5px dotted;
+            border-top-color: gray;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .main-stage3 {
+            border: 1px solid skyblue;
+            width: 550px;
+            height: 390px;
+            margin: auto;
+            position: absolute;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px skyblue;
+            left: 5px;
+            overflow-y: scroll;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-stage4 {
+            border: 1px solid skyblue;
+            width: 550px;
+            height: 390px;
+            margin: auto;
+            position: absolute;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px skyblue;
+            left: 5px;
+            overflow-y: scroll;
+        }
+
+        /* .main-stage::-webkit-scrollbar {
+
+            scroll-behavior: smooth;
+        } */
+
+        .main-stage img {
+            width: 540px;
+            height: 250px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 2px 2px gainsboro;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 3px;
+            position: relative;
+            top: 30px;
+        }
+
+        .news {
+            width: 540px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            font-size: 10px;
+            color: rgb(0, 183, 255);
+            position: relative;
+            bottom: 13px;
+        }
+
+        .news a {
+            text-decoration: none;
+        }
+
+        .news1 {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            width: 500px;
+            height: 90px;
+            padding-left: 10px;
+            font-size: 10px;
+            position: relative;
+            top: 33px;
+            right: 70px;
+            background-color: white;
+            border: 1px solid skyblue;
+            border-radius: 15px;
+        }
+
+        .news1-a {
+            margin-bottom: 10px;
+            text-align: start;
+        }
+
+
+        .photo {
+            background-color: red;
+            color: white;
+            font-weight: bolder;
+            border-radius: 2px;
+            padding: 2px;
+
+        }
+
+        .diary {
+            background-color: green;
+            color: white;
+            font-weight: bolder;
+            border-radius: 2px;
+            padding: 2px;
+        }
+
+        .sheet {
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+            border-radius: 2px;
+            padding: 2px;
+        }
+
+        .news2 {
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            flex-direction: column;
+            width: 500px;
+            height: 90px;
+            background-color: white;
+            position: relative;
+            top: 33px;
+            right: 25px;
+            font-size: 10px;
+            border: 1px solid skyblue;
+            border-radius: 15px;
+            padding-left: 10px;
+        }
+
+        .pp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 15px;
+            background-color: skyblue;
+            color: white;
+            position: relative;
+            left: 20px;
+            top: 15px;
+            border-radius: 5px;
+        }
+
+        .input1 {
+            position: relative;
+            bottom: 40px;
+            left: 60px;
+        }
+
+        .news2>div:nth-child(1) {
+            position: relative;
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .news2>div:nth-child(2) {
+            position: relative;
+            left: 10px;
+        }
+
+        .news2>div:nth-child(3) {
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+
+        .list {
+            height: 100px;
+
+        }
+
+        .list>div:nth-child(1) {
+            background-color: skyblue;
+            border-radius: 5px;
+            font-size: 13px;
+            width: 60px;
+            text-align: center;
+            position: relative;
+            left: 45px;
+            margin-left: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .list>div:nth-child(2) {
+            background-color: skyblue;
+            border-radius: 5px;
+            margin-top: 3px;
+            font-size: 13px;
+            width: 60px;
+            text-align: center;
+            position: relative;
+            right: 7px;
+            left: 45px;
+            margin-left: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .list>div:nth-child(3) {
+            background-color: skyblue;
+            border-radius: 5px;
+            margin-top: 3px;
+            font-size: 13px;
+            width: 60px;
+            text-align: center;
+            position: relative;
+            right: 7px;
+            left: 45px;
+            margin-left: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .list>div:nth-child(4) {
+            background-color: skyblue;
+            border-radius: 5px;
+            margin-top: 3px;
+            font-size: 13px;
+            width: 60px;
+            text-align: center;
+            position: relative;
+            right: 7px;
+            left: 45px;
+            margin-left: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .main2 {
+            height: 800px;
+            font-family: "싸이월드폰트";
+
+        }
+
+        .photo-zone {
+            height: 20px;
+            margin-top: 10px;
+            background-color: gray;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .diary-zone {
+            height: 20px;
+            margin-top: 10px;
+            background-color: gray;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: transparent;
+            border-color: transparent;
+            font-size: 10px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        .callendar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            height: 90%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 20px;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px gainsboro;
+        }
+
+        .top {
+            width: 90%;
+            height: 70px;
+            margin: auto;
+            position: absolute;
+            bottom: 270px;
+            background-color: rgba(220, 220, 220, 0.377);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .top1 {
+            width: 90%;
+            background-color: white;
+            box-shadow: 1px 1px 1px 1px gainsboro;
+            margin-top: 10px;
+            color: rgb(73, 121, 1);
+        }
+
+        .top2 {
+            width: 100%;
+            background-color: transparent;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .slot {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            height: 75%;
+
+            position: relative;
+            top: 35px;
+
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            margin: 0 auto;
+        }
+
+        .slot>div {
+            padding: 17px;
+            font-size: 10px;
+            color: rgb(15, 180, 245);
+            display: flex;
+            justify-content: start;
+        }
+
+        .slot>div:nth-child(1) {
+            color: gray;
+        }
+
+        .slot>div:nth-child(2) {
+            color: gray;
+        }
+
+        .slot>div:nth-child(8) {
+            color: red;
+        }
+
+        .slot>div:nth-child(15) {
+            color: red;
+        }
+
+        .slot>div:nth-child(22) {
+            color: red;
+        }
+
+        .slot>div:nth-child(29) {
+            color: red;
+        }
+
+        .slot>div:nth-child(34) {
+            color: gray;
+        }
+
+        .slot>div:nth-child(35) {
+            color: gray;
+        }
+
+        .nothing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 95%;
+            height: 95%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .alert {
+            width: 90%;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            bottom: 50px;
+            border: 1px solid gainsboro;
+        }
+
+        .edit-btn {
+            background-color: rgb(179, 175, 175);
+            height: 70%;
+            width: 70%;
+            margin-left: 10px;
+            margin-top: 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .alert2 {
+            width: 90%;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            bottom: 50px;
+            border: 1px solid transparent;
+        }
+
+        .alert2>div:nth-child(1) {
+            color: gray;
+        }
+
+        .font-btn {
+            color: gray;
+            background-color: rgba(220, 220, 220, 0.479);
+            position: relative;
+            left: 110px;
+            border-radius: 5px;
+            font-weight: lighter;
+        }
+
+        .book-btn {
+            color: gray;
+            background-color: rgba(220, 220, 220, 0.479);
+            border-radius: 5px;
+            font-weight: lighter;
+        }
+
+        .alert3 {
+            width: 90%;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            bottom: 50px;
+            border: 1px solid gainsboro;
+        }
+
+        .alert3-1 {
+
+            display: flex;
+        }
+
+        .mini-profile {
+            width: 100px;
+        }
+
+        .inputTag {
+            width: 349px;
+        }
+
+        .inputTag input {
+            width: 341px;
+            height: 100px;
+        }
+
+        .alert4 {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: gray;
+            back
+        }
+
+        .alert4 > div:nth-child(1) {
+            position: relative;
+            left: 70px;
+            font-size: 10px;
+        }
+
+        .alert4 > div:nth-child(2) {
+            position: relative;
+            left: 160px;
+            font-size: 10px;
+        }
+
+        .okay-btn {
+            background-color: rgba(220, 220, 220, 0.479);
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box-border">
+            <div class="box">
+                <div class="nav-bar">
+                    <a class="today" href=""
+                        data-ke-size="size16">TODAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a class="today-num" href="">1</a>
+                    <a class="total-num" href="">1</a>
+                    <a class="name" href="">뚜구리의 추억 상ㅈr...★</a>
+                    <a class="http" href="">https://127.0.0.1:5500/ch03_javascript_advanced/개인프로젝트/.html</a>
+                </div>
+                <div class="main">
+                    <div>
+                        <!-- <div>
+                            <img class="ring1"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnR3_Grr59dMzgzhMWw7O4tSAa8mojctlzKcIDrOrz1Iun1pR3U_fxg5ec5JpFSRJMfY&usqp=CAU"
+                                alt="">
+                            <img class="ring1"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnR3_Grr59dMzgzhMWw7O4tSAa8mojctlzKcIDrOrz1Iun1pR3U_fxg5ec5JpFSRJMfY&usqp=CAU"
+                                alt="">
+                        </div>
+                        <div>
+                            <img class="ring2"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnR3_Grr59dMzgzhMWw7O4tSAa8mojctlzKcIDrOrz1Iun1pR3U_fxg5ec5JpFSRJMfY&usqp=CAU"
+                                alt="">
+                            <img class="ring2"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhnR3_Grr59dMzgzhMWw7O4tSAa8mojctlzKcIDrOrz1Iun1pR3U_fxg5ec5JpFSRJMfY&usqp=CAU"
+                                alt="">
+                        </div> -->
+                        <select class="state" title="" onchange="window.open(value,'_self');">
+                            <option value="" selected disabled hidden><a class="dropdown-item" href="#">Today
+                                    is...😊기쁨</a></option>
+                            <option value="">Today is...😢슬픔</option>
+                            <option value="">Today is...😡화남</option>
+                            <option value="">Today is...🙁우울</option>
+                        </select>
+                        <div class="profile"><img
+                                src="https://img.etnews.com/news/article/2016/01/28/article_28231145458395.jpg" alt="">
+                        </div>
+                        <select class="friend" title="" onchange="f_over(this)">
+                            <option value="" selected disabled hidden>파도타기🌊</option>
+                            <option value="https://www.instagram.com">김성민의 미니홈피</option>
+                            <option value="https://www.naver.com">김은식의 미니홈피</option>
+                        </select>
+                        <div class="story">
+                            <i class="sparkling-text"> 나를 욕하는 people들<br>
+                                나를 놀리는 people들<br>
+                                <br>
+                                ..나도 알아 내가 잘생긴거<br>
+                                그냥 니 마음을 말하란 말야<br>
+                                내 눈빛에 꼼짝 못하는girl<br>
+                                <br>
+                                인기있는 삶은 힘들다.
+                                <br>
+                            </i>
+                        </div>
+                    </div>
+
+                    <div class="changebox">
+                        <div class="main-stage"
+                            style="border: gainsboro; width: 560px; height: 390px; overflow-y: scroll;">
+                            <div class="news">
+                                <div class="pp">
+                                    <p>Updated news</p>
+                                </div>
+                                <div class="news1">
+                                    <div>
+                                        <div class="news1-a">
+                                            <a class="photo" href="">사진첩</a>&nbsp;스키..＊
+                                        </div>
+                                        <div class="news1-b">
+                                            <a class="diary" href="">다이어리</a>&nbsp;토트넘이 (당연히) 맨유를 이겼다..
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news2">
+                                    <div>
+                                        <a class="diary" href="">다이어리</a>&nbsp;&nbsp;&nbsp;1/36
+                                    </div>
+                                    <div>
+                                        <a class="photo" href="">사진첩</a>&nbsp;&nbsp;&nbsp;1/28
+                                    </div>
+                                    <div>
+                                        <a class="sheet" href="">방명록</a>&nbsp;&nbsp;&nbsp;3/50
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="../resources/videos/miniroom.gif" alt="">
+                            </div>
+                        </div>
+
+                        <div class="main-stage2">
+                            <div>
+                                사진첩
+                            </div>
+                            <div>
+                                2023.08.25
+                            </div>
+                            <div>
+                                <img src="https://i1.ruliweb.com/ori/22/08/12/1828daeb7ab146591.gif" width="100%"
+                                    height="100%" alt="">
+                            </div>
+                            <div>
+                                오늘은 스키를 탔다 ~~<br>
+                                하나도 안무섭고 재미있었다!!
+                            </div>
+                            <div>
+                                &nbsp;
+                            </div>
+                            <div>
+                                2023.08.20
+                            </div>
+                            <div>
+                                <img src="../resources/images/맹구 밟기.png" width="100%" height="100%" alt="">
+                            </div>
+                            <div>
+                                황트넘이 맹구를 이겼다 <br>
+                                근데..당연한 결과라 별 감흥이 없다.. <br>
+                                하나도 신나지가 않는다~
+                            </div>
+                        </div>
+
+                        <div class="main-stage3">
+                            <div class="callendar">
+                                <div class="top">
+                                    <div class="top1">
+                                        2023년 8월
+                                    </div>
+                                    <div class="top2">
+                                        🍺약속&nbsp;&nbsp;&nbsp; 💻출근&nbsp;&nbsp;&nbsp; 🏖휴가&nbsp;&nbsp;&nbsp; 💓기념일
+                                    </div>
+                                </div>
+                                <div class="slot">
+                                    <div>30</div>
+                                    <div>31</div>
+                                    <div>1</div>
+                                    <div>2💻</div>
+                                    <div>3💻</div>
+                                    <div>4💻</div>
+                                    <div>5🍺</div>
+                                    <div>6</div>
+                                    <div>7</div>
+                                    <div>8💻</div>
+                                    <div>9</div>
+                                    <div>10💻</div>
+                                    <div>11</div>
+                                    <div>12</div>
+                                    <div>13🏖</div>
+                                    <div>14🏖</div>
+                                    <div>15🏖</div>
+                                    <div>16</div>
+                                    <div>17💻</div>
+                                    <div>18💻</div>
+                                    <div>19🍺</div>
+                                    <div>20🍺</div>
+                                    <div>21</div>
+                                    <div>22💻</div>
+                                    <div>23💻</div>
+                                    <div>24</div>
+                                    <div>25💓</div>
+                                    <div>26</div>
+                                    <div>27🍺</div>
+                                    <div>28</div>
+                                    <div>29💻</div>
+                                    <div>30</div>
+                                    <div>31💻</div>
+                                    <div>1</div>
+                                    <div>2</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main-stage4">
+                            <div class="nothing">
+                                <div class="alert">
+                                    <div>🔊&nbsp;&nbsp;오늘도 사랑충만한 하루 되시길~ </div>
+                                    <div><button class="edit-btn">EDIT</button></div>
+                                </div>
+                                <div class="alert2">
+                                    <div>▶방명록 알림기능 사용중</div>
+                                    <div class="font-btn"><button>글꼴설정</button></div>
+                                    <div class="book-btn"><button>방명록관리</button></div>
+                                </div>
+                                <div class="alert3">
+                                    <div class="alert3-1">
+                                        <div class="mini-profile"><img
+                                                src="https://cyworld.com/img/gif/ani_pictureminime_3x.gif" alt=""
+                                                width="100%" height="100%"></div>
+                                        <div class="inputTag"><input type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="alert4">
+                                    <div>미니미</div>
+                                    <div><input type="checkbox">텍스티콘</div>
+                                    <div><button class="okay-btn">확인</button></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div>
+                        <div class="list">
+                            <div><button id="homeButton">홈</button></div>
+                            <div><button id="photoButton">사진첩</button></div>
+                            <div><button id="diaryButton">다이어리</button></div>
+                            <div><button id="guestButton">방명록</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        function f_over(selectElement) {
+            let selectedValue = selectElement.value;
+
+            if (selectedValue === "https://www.instagram.com") {
+                window.location.href = selectedValue;
+            } else if (selectedValue === "https://www.naver.com") {
+                window.open(selectedValue, "김은식의 미니홈피", "width=900px,height=600px,left=500,top=70px");
+            }
+        }
+
+        let homeButton = document.getElementById("homeButton");
+        let photoButton = document.getElementById("photoButton");
+        let diaryButton = document.getElementById("diaryButton");
+        let guestButton = document.getElementById("guestButton");
+        let homeScreen = document.querySelector(".main-stage");
+        let photoScreen = document.querySelector(".main-stage2");
+        let diaryScreen = document.querySelector(".main-stage3");
+        let guestScreen = document.querySelector(".main-stage4");
+
+        homeScreen.style.display = "none";
+        photoScreen.style.display = "none";
+        diaryScreen.style.display = "none";
+        guestScreen.style.display = "block";
+
+
+        homeButton.addEventListener("click", function () {
+            homeScreen.style.display = "block";
+            photoScreen.style.display = "none";
+            diaryScreen.style.display = "none";
+            guestScreen.style.display = "none";
+        });
+
+        photoButton.addEventListener("click", function () {
+            homeScreen.style.display = "none";
+            photoScreen.style.display = "block";
+            diaryScreen.style.display = "none";
+            guestScreen.style.display = "none";
+        });
+
+        diaryButton.addEventListener("click", function () {
+            homeScreen.style.display = "none";
+            photoScreen.style.display = "none";
+            diaryScreen.style.display = "block";
+            guestScreen.style.display = "none";
+        });
+
+        guestButton.addEventListener("click", function () {
+            homeScreen.style.display = "none";
+            photoScreen.style.display = "none";
+            diaryScreen.style.display = "none";
+            guestScreen.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>
