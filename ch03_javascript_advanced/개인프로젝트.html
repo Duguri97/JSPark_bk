@@ -40,9 +40,9 @@
             background-color: orange;
         }
 
-        div {
+        /* div {
             border: 1px solid red;
-        }
+        } */
 
         .container {
             width: 900px;
@@ -704,7 +704,7 @@
             display: flex;
             justify-content: space-between;
             position: relative;
-            bottom: 50px;
+            top: 5px;
             border: 1px solid gainsboro;
         }
 
@@ -725,8 +725,9 @@
             display: flex;
             justify-content: space-between;
             position: relative;
-            bottom: 50px;
+            top: 10px;
             border: 1px solid transparent;
+            background-color: rgba(220, 220, 220, 0.432);
         }
 
         .alert2>div:nth-child(1) {
@@ -755,7 +756,7 @@
             display: flex;
             justify-content: space-between;
             position: relative;
-            bottom: 50px;
+            top: 15px;
             border: 1px solid gainsboro;
         }
 
@@ -777,22 +778,29 @@
             height: 100px;
         }
 
+        .inputTag2 {
+            width: 349px;
+            font-size: 13px;
+        }
+
         .alert4 {
             width: 90%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: gray;
-            back
+            background-color: rgba(220, 220, 220, 0.432);
+            position: relative;
+            top: 10px;
         }
 
-        .alert4 > div:nth-child(1) {
+        .alert4>div:nth-child(1) {
             position: relative;
             left: 70px;
             font-size: 10px;
         }
 
-        .alert4 > div:nth-child(2) {
+        .alert4>div:nth-child(2) {
             position: relative;
             left: 160px;
             font-size: 10px;
@@ -802,6 +810,57 @@
             background-color: rgba(220, 220, 220, 0.479);
             font-size: 10px;
         }
+
+        .alert5 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            font-size: 10px;
+            color: gray;
+            background-color: rgba(220, 220, 220, 0.432);
+            position: relative;
+            top: 30px;
+        }
+
+        .alert5>div:nth-child(2) {
+            position: relative;
+            right: 80px;
+        }
+
+        .alert6 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 30px;
+            height: 100px;
+        }
+
+
+
+        .alert7 {
+            width: 86%;
+            display: flex;
+            background-color: rgba(220, 220, 220, 0.432);
+            padding: 7px;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            top: 40px;
+
+        }
+
+        .alert7 input {
+            width: 350px;
+            height: 30px;
+        }
+
+        .okay-btn2 {
+            background-color: rgba(220, 220, 220, 0.479);
+            font-size: 10px;
+            width: 40px;
+        }
     </style>
 </head>
 
@@ -810,10 +869,10 @@
         <div class="box-border">
             <div class="box">
                 <div class="nav-bar">
-                    <a class="today" href=""
+                    <a class="today" href="javascript:f_refreshPage();"
                         data-ke-size="size16">TODAY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;TOTAL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    <a class="today-num" href="">1</a>
-                    <a class="total-num" href="">1</a>
+                    <a class="today-num" href="javascript:void(0)">1</a>
+                    <a class="total-num" href="javascript:void(0)">1</a>
                     <a class="name" href="">뚜구리의 추억 상ㅈr...★</a>
                     <a class="http" href="">https://127.0.0.1:5500/ch03_javascript_advanced/개인프로젝트/.html</a>
                 </div>
@@ -865,7 +924,7 @@
                     </div>
 
                     <div class="changebox">
-                        <div class="main-stage"
+                        <div class="main-stage" id="stg1"
                             style="border: gainsboro; width: 560px; height: 390px; overflow-y: scroll;">
                             <div class="news">
                                 <div class="pp">
@@ -883,13 +942,13 @@
                                 </div>
                                 <div class="news2">
                                     <div>
-                                        <a class="diary" href="">다이어리</a>&nbsp;&nbsp;&nbsp;1/36
+                                        <a class="diary" href="">다이어리</a>&nbsp;&nbsp;&nbsp;19/31
                                     </div>
                                     <div>
-                                        <a class="photo" href="">사진첩</a>&nbsp;&nbsp;&nbsp;1/28
+                                        <a class="photo" href="">사진첩</a>&nbsp;&nbsp;&nbsp;2/50
                                     </div>
                                     <div>
-                                        <a class="sheet" href="">방명록</a>&nbsp;&nbsp;&nbsp;3/50
+                                        <a class="sheet" href="">방명록</a>&nbsp;&nbsp;&nbsp;1/50
                                     </div>
                                 </div>
                             </div>
@@ -898,7 +957,7 @@
                             </div>
                         </div>
 
-                        <div class="main-stage2">
+                        <div class="main-stage2" id="stg2">
                             <div>
                                 사진첩
                             </div>
@@ -1003,6 +1062,25 @@
                                     <div><input type="checkbox">텍스티콘</div>
                                     <div><button class="okay-btn">확인</button></div>
                                 </div>
+                                <div class="alert5">
+                                    <div>no.399</div>
+                                    <div>김은식🏘&nbsp;&nbsp;&nbsp;&nbsp;(2023.08.28&nbsp;&nbsp;12:45)</div>
+                                    <div>비밀로하기&nbsp;|&nbsp;삭제&nbsp;|&nbsp;신고</div>
+                                </div>
+                                <div class="alert6">
+                                    <div class="mini-profile"><img
+                                            src="https://i.ytimg.com/vi/5dvCVrOx1pE/maxresdefault.jpg" alt=""
+                                            width="100%" height="100px"></div>
+                                    <div class="inputTag2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;토트넘,,,잘하네요,,,패배 인정합니다,,</div>
+                                </div>
+                                <div class="alert7">
+                                    <div>
+                                        <input type="text">
+                                    </div>
+                                    <div>
+                                        <button class="okay-btn2">확인</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -1044,10 +1122,10 @@
         let diaryScreen = document.querySelector(".main-stage3");
         let guestScreen = document.querySelector(".main-stage4");
 
-        homeScreen.style.display = "none";
+        homeScreen.style.display = "block";
         photoScreen.style.display = "none";
         diaryScreen.style.display = "none";
-        guestScreen.style.display = "block";
+        guestScreen.style.display = "none";
 
 
         homeButton.addEventListener("click", function () {
@@ -1077,6 +1155,63 @@
             diaryScreen.style.display = "none";
             guestScreen.style.display = "block";
         });
+        
+        // 업데이트된 데이터 로컬 스토리지에 저장
+        let todayRefreshCount = localStorage.getItem("todayRefreshCount");
+        let totalRefreshCount = localStorage.getItem("totalRefreshCount");
+        let lastRefreshDate = localStorage.getItem("lastRefreshDate");
+
+        // 첫 방문시 초기값 저장
+        if(totalRefreshCount == null){
+            localStorage.setItem("todayRefreshCount", 0);
+            localStorage.setItem("totalRefreshCount", 0);
+            localStorage.setItem("lastRefreshDate", new Date().getDate());
+
+            todayRefreshCount = localStorage.getItem("todayRefreshCount");
+            totalRefreshCount = localStorage.getItem("totalRefreshCount");
+            lastRefreshDate = localStorage.getItem("lastRefreshDate");
+        }
+
+        todayRefreshCount = parseInt(todayRefreshCount);
+        totalRefreshCount = parseInt(totalRefreshCount);
+        // 로컬스토리지로 부터 변수3개값 가져와야하고
+        function f_refreshPage() {
+            const currentDate = new Date().getDate();
+            if (currentDate != lastRefreshDate) {
+                todayRefreshCount = 1;
+                lastRefreshDate = currentDate;
+            } else {
+                todayRefreshCount++;
+            }
+            totalRefreshCount++;
+            // 수정된3개변수값 로컬스토리지에 저장
+            localStorage.setItem("todayRefreshCount", todayRefreshCount);
+            localStorage.setItem("totalRefreshCount", totalRefreshCount);
+            localStorage.setItem("lastRefreshDate", lastRefreshDate);
+            f_updateRefreshCounts();
+        }
+
+        f_refreshPage();
+
+        function f_updateRefreshCounts() {
+            const todayRefreshElements = document.querySelectorAll('.today-num');
+            todayRefreshElements.forEach(element => {
+                element.textContent = todayRefreshCount;
+            });
+
+            const totalRefreshElements = document.querySelectorAll('.total-num');
+            totalRefreshElements.forEach(element => {
+                element.textContent = totalRefreshCount;
+            });
+        }
+
+        function f_over(e) {
+            window.open(e.value, '_blank');
+        }
+
+        window.onload = function () {
+            f_updateRefreshCounts();
+        };
     </script>
 </body>
 
