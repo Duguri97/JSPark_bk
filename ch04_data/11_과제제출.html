@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미세먼지시각화</title>
+</head>
+
+<body>
+    <h3>2022년 미세먼지 경보이력</h3>
+    <div style="width: 600px; height: 400px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../resources/js/myjs.js"></script>
+
+    <script>
+        let v_airData = JSON.parse(localStorage.getItem("airData"));
+
+        console.log(v_airData);
+        console.log(v_airData[0]);
+
+
+        let v_name = [];
+
+        for (let i = 0; i < v_airData.length; i++) {
+            if (v_name.indexOf(v_airData[i]["districtName"]) == -1) {
+                v_name.push(v_airData[i]["districtName"])
+            }
+
+        }
+        console.log(v_name);
+
+        let v_data = [];
+
+        let v_message = [];
+        for (let i = 0; i < v_airData.length; i++) {
+            v_message.push(v_airData[i]["districtName"]);
+        }
+        console.log(v_message);
+        let num = 0;
+
+        for (let k = 0; k < v_name.length; k++) {
+            num = 0;
+            for (let i = 0; i < v_message.length; i++) {
+                if (v_name[k] == v_message[i]) {
+                    num++;
+                }
+            }
+            v_data.push(num);
+        }
+        console.log(v_data);
+
+        let v_randomColor = [];
+        for (let i = 0; i < v_data.length; i++) {
+            v_randomColor.push(f_rgbColor());
+        }
+
+        v_name.sort((a, b) => {
+            return v_data[v_name.indexOf(b)] - v_data[v_name.indexOf(a)];
+        });
+
+        v_data.sort((a, b) => {
+            return b - a;
+        });
+
+
+
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar', // bar, line, pie, doughnut, rader
+            data: {
+                labels: v_name,
+                datasets: [{
+                    label: '지역별 거주 학생수',
+                    data: v_data,
+                    borderWidth: 1,
+                    backgroundColor: ['red', 'blue', 'yellow', 'green', 'pink', 'orange']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>
