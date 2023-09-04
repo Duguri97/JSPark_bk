@@ -8,6 +8,7 @@
 
     <style>
         /* 모든페이지 같이 가져가기 */
+
         div {
             border: 1px solid red;
         }
@@ -16,6 +17,8 @@
             width: 1650px;
             height: 800px;
             margin: auto;
+            border: 1px solid;
+            border-color: gainsboro;
         }
 
         .nav-bar {
@@ -34,11 +37,59 @@
             left: 300px;
         }
 
+        .drawer-nav {
+            width: 200px;
+            height: 100%;
+            background-color: white;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            transform: translate(0, -100%);
+            
+            box-shadow: 4px 0px 4px 0px gainsboro;
+        }
+
+        .align-end {
+            text-align: end;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translate(-100%, 0);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .slide-in {
+            /* 애니메이션 종료 후 종료 상태 유지 = forwards */
+            animation: slideIn 1s forwards;
+        }
+
+        @keyframes slideOut {
+            /* 0%, 100%랑 from, to가 같음 */
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-100%, 0);
+            }
+        }
+
+        .slide-out {
+            animation: slideOut 1s forwards;
+        }
+
         /* 모든페이지 같이 가져가기 */
 
         .text-bar {
             height: 250px;
-
+            background-color: gainsboro;
         }
 
         .text-bar a {
@@ -60,7 +111,7 @@
 
         .japanese {
             margin-top: 15px;
-            color: gray
+            color: gray;
         }
 
         .text {
@@ -76,11 +127,35 @@
             letter-spacing: 0.05em;
             white-space: nowrap;
             text-transform: uppercase;
-            color: gray
+            color: gray;
 
             mix-blend-mode: multiply;
             opacity: 0;
             animation: fadeInText 2s 1s ease-out forwards;
+        }
+
+        .bottom {
+            height: 430px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottom div:nth-child(1) {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottom div:nth-child(2) {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         @keyframes fadeInText {
@@ -102,7 +177,7 @@
                         alt=""></a>
             </div>
             <div>
-                <img height="40px"
+                <img onclick="f_drawer()" height="40px"
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAADPz89LS0uWlpb39/eCgoKQkJCxsbH29vZiYmI4ODh0dHTX19empqbFxcXr6+sQEBDh4eEbGxu7u7s0NDR6enpXV1egoKDJyclvb28ODg6IiIhcXFwfHx8ZGRnwNjATAAACZUlEQVR4nO3dCW7CMBCFYRdIw75vbSm9/y2rqKgUVRo72NJoxv93gveUkGBj7BAAAAAAAAAAAAAAAAAAoAKrdjq0Y9qu+tVbH1/sOa7TC7baYZ/UJvZrZtpJnzZrkgputHNm2KRUPGinzHKIF3zVzpjpNVZwq50w2zbScKodMNtULjjRzlfARGw41o5XwFhsONeOV8BcbGj3ZX83Extqpyui8oY77XQFXMWGJ+14BZzEhlbHTX/JY6iBdrwCFmJDD48auWBYaufLtow0NP803cUKhoV2xEyRT6H9+zR6j3bO2ikznFMKhrDSzvm05GnhxuYgap40l3izHlmbcpuNekx53y7kdmDHts/lAwAAAAAAAAAAxjRvy5Edy7e+P1zsh9q/JfU23PfoN7hqx33KdZBa0O5i9ugy9h+f2jkzfKYUfNdOmeU9XtD6Sm95lXfwsFhfXqofwkU7YLZLpKF2vgLkgnYXC93Jy4bsvgrv5JeivS9r/w3Fhh/a8QrYiA210xVR+TX0/zn0/yz1/z708KiRC1bwvdT+2CI6JeV+fFjBGL+CeRrLT5vEubYK5kuD/znvjvffLQAAAAAAAAAAgCHO94myt9fXoddeXxOj+7XFFkD/srtsKHHPPff7Jrrf+9L//qVf2hEzRfegtX2PdmL3qXa+AuSC/vfz9r8nu/999a3v5t2Rn6ba6YqovKH/c2ZsDpseyWcFWV/l3ZFXettfqh/9I7D7c9cqODvP/H+7EhazW5tke5RwhmVoLI+Bk84h9X+WbLA7hko9DzhUcKZzx/m53AAAAAAAAAAAAAAAAABg0zfn21Nf0tdOJAAAAABJRU5ErkJggg=="
                     alt="">
             </div>
@@ -110,6 +185,8 @@
 
         <div class="text-bar">
             <div class="english">
+                <br>
+                <br>
                 This site is Hometax. Basically, you can get percentile data on earned
                 income and check the status of
                 business <br>owners by age, and gender. Hometax that can be used anytime, anywhere. Everyone, try it
@@ -124,10 +201,23 @@
                     いつでもどこでも使用できるホームタックス。<br> 皆さんも早くお試しください。
                 </h1>
             </div>
-            </a>
+        </div>
 
+        <div class="bottom">
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/National_Tax_Service_of_the_Republic_of_Korea_Logo_%28vertical%29.svg/250px-National_Tax_Service_of_the_Republic_of_Korea_Logo_%28vertical%29.svg.png" alt="">
+            </div>
+            <div>
+                <img height="100%" width="100%" src="https://blog.kakaocdn.net/dn/DY4dY/btq2qxaUV88/h9scnoR6SxOqgRKLnkKcH0/Korea%20Map%20White.PNG?attach=1&knm=img.png" alt="">
+            </div>
+        </div>
 
-
+        <div class="drawer-nav">
+            <div class="align-end">
+                <img onclick="f_close()" width="40" height="40" src="../resources/images/x표시.png" alt="">
+            </div>
+            <div>회사소개</div>
+            <div>오시는길</div>
         </div>
     </div>
 
@@ -142,6 +232,17 @@
             }
         }
 
+        const v_drawer = document.getElementsByClassName("drawer-nav")[0];
+
+        function f_drawer() {
+            v_drawer.classList.add("slide-in");
+            v_drawer.classList.remove("slide-out");
+        }
+
+        function f_close() {
+            v_drawer.classList.add("slide-out");
+            v_drawer.classList.remove("slide-in");
+        }
     </script>
 
 </body>
