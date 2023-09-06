@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인화면</title>
+
+    <style>
+        .align-end {
+            text-align: end;
+        }
+
+        div {
+            border: 1px solid red;
+        }
+
+        body {
+            background-color: aliceblue;
+        }
+
+        .container {
+            width: 1000px;
+            height: 1000px;
+            margin: auto;
+            margin-top: 10%;
+
+            background-color: rgba(0, 81, 255, 0.637);
+        }
+
+        .top {
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            font-size: 50px;
+            color: white;
+            text-shadow: 5px 0px 5px white;
+            font-style: italic;
+        }
+
+        .bottom {
+            height: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .bottom>input {
+            height: 0px;
+            width: 200px;
+        }
+
+        .bottom>div:nth-child(1) {
+            color: white;
+        }
+
+        .bottom>div:nth-child(2) {
+            color: white;
+
+        }
+
+        .bottom>div:nth-child(3) {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .modal {
+            width: 400px;
+            height: 300px;
+            border-radius: 20px;
+            box-shadow: 4px 4px 4px 4px gainsboro;
+            background-color: white;
+
+            position: absolute;
+            top: 20%;
+            left: 50%;
+
+            transform: translate(-50%, 0);
+        }
+
+        .modal>div:nth-child(2) {
+
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <h1>Hometax</h1>
+        </div>
+        <div class="bottom">
+            <div>
+                ID:&nbsp;&nbsp;<input id="inputId" type="text">
+            </div>
+            <div>
+                PW:&nbsp;&nbsp;<input id="inputPw" type="password">
+            </div>
+            <div>
+                <button onclick="f_go()">회원가입</button>
+                <button onclick="f_signIn()">로그인</button>
+            </div>
+        </div>
+
+        <div class="modal modal-center d-none" hidden>
+            <div class="align-end">
+                <img onclick="f_close()" width="40" height="40" src="../resources/images/x표시.png" alt="">
+            </div>
+            <div>
+                <h1>회원 가입</h1>
+                <form id="signupForm">
+                    <label for="username">사용자 이름:</label>
+                    <input type="text" id="username" name="username" required>
+                    <br>
+                    <label for="password">비밀번호:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="password" id="password" name="password" required>
+                    <br>
+                    <button type="submit">가입</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function f_go() {
+            let modal = document.getElementsByClassName("modal")[0];
+            modal.style.display = "block";
+        }
+
+        function f_close() {
+            let modal = document.getElementsByClassName("modal")[0];
+            modal.style.display = "none";
+        }
+
+        const v_id = document.getElementById("username");
+        const v_pw = document.getElementById("password");
+
+        function f_signIn() {
+            sessionStorage.setItem("loginId", v_id.value);
+            location.href = "./홈 화면.html";
+        }
+    </script>
+</body>
+
+</html>

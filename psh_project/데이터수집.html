@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터수집</title>
+</head>
+
+<body>
+    <button onclick="f_send()">요청 보내기</button>
+
+    <script>
+
+        function f_send() {
+            let pageNo = 1;
+
+            f_ajax(pageNo);
+        }
+
+        let taxData = [];
+
+        function f_ajax(p_pageNo) {
+            var xhr = new XMLHttpRequest();
+            var url = 'https://api.odcloud.kr/api/15082063/v1/uddi:a7cc4825-d496-4d6a-a667-a794fe334463?page=1&perPage=109';
+            var queryParams = '&' + encodeURIComponent('serviceKey') + '=' + 'JLqXqyO%2FDYsq%2B972EPpNT6nUBB33tJxy7hL%2BiJoT5MOJv3ejT2veVpFWb8144cuY1%2F9rYqURdTVxv1jif%2FfTPQ%3D%3D'; /*Service Key*/
+
+            xhr.open('GET', url + queryParams);
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                    console.log(this.responseText);
+                    let v_json = JSON.parse(this.responseText);
+                    console.log(v_json);
+
+                    localStorage.setItem('taxData', JSON.stringify(v_json));
+                }
+            };
+
+            xhr.send('');
+
+        }
+
+    </script>
+</body>
+
+</html>

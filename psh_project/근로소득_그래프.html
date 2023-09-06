@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>근로소득그래프</title>
+</head>
+
+<body>
+
+    <div style="width: 1000px; height: 500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../resources/js/myjs.js"></script>
+    <script>
+        let v_taxData = JSON.parse(localStorage.getItem("taxData"));
+
+        console.log(v_taxData);
+        console.log(v_taxData["data"][0]);
+        console.log(v_taxData["data"][0]["구분"]);
+
+        let v_earn = [];
+
+        for (let i = 0; i < v_taxData["data"].length; i+=10) {
+            if (v_earn.indexOf(v_taxData["data"][i]["구분"])) {
+                v_earn.push(v_taxData["data"][i]["구분"])
+            }
+        }
+        console.log(v_earn);
+
+        let v_earnCount = [];
+        
+        for (let i = 0; i < v_taxData["data"].length; i+=10) {
+            if (v_earnCount.indexOf(v_taxData["data"][i]["근로소득금액(억 원)"])) {
+                v_earnCount.push(v_taxData["data"][i]["근로소득금액(억 원)"])
+            }
+        }
+        console.log(v_earnCount);
+
+
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: v_earn,
+                datasets: [{
+                    label: '구간별 소득의 합',
+                    data: v_earnCount,
+                    borderWidth: 1,
+                    backgroundColor: ['gray']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
